@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calculadora</title>
+        <link rel="stylesheet" href="estilos.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+        <script type="text/javascript">
+            function info (elEvento) { 
+                evento = elEvento || window.event;
+                k=evento.keyCode; //número de código de la tecla.
+                alert(k)
+            }
+            window.onload = function() {
+                document.onkeydown = info;
+            }
+        </script>
+    </head>
+    <body>
+        <div class="todo">
+            <div class="contenedor clearfix">
+                <form name="calculadora" id="calculadora">
+                    <p id="pantalla" class="button">0</p>
+                    <br>
+                    <input type="reset" id="C" value="C" onclick="borradoTotal()">
+                    <input type="button" id="signo" value="±" onclick="opuest()">
+                    <input type="button" id="division" value="÷" onclick="operar('/')">
+                    <input type="button" id="multiplicacion" value="×" onclick="operar('*')">
+                    <br>
+                    <input type="button" id="siete" value="7" onclick="numero('7')">
+                    <input type="button" id="ocho" value="8" onclick="numero('8')">
+                    <input type="button" id="nueve" value="9" onclick="numero('9')">
+                    <input type="button" id="resta" value="-" onclick="operar('-')">
+                    <br>
+                    <input type="button" id="cuatro" value="4" onclick="numero('4')">
+                    <input type="button" id="cinco" value="5" onclick="numero('5')">
+                    <input type="button" id="seis" value="6" onclick="numero('6')">
+                    <input type="button" id="suma" value="+" onclick="operar('+')">
+                    <br>
+                    <input type="button" id="uno" value="1" onclick="numero('1')">
+                    <input type="button" id="dos" value="2" onclick="numero('2')">
+                    <input type="button" id="tres" value="3" onclick="numero('3')">
+                    <br>
+                    <input type="button" id="cero" value="0" onclick="numero('0')">
+                    <input type="button" id="punto" value="." onclick="numero('.')">
+                    <input type="button" id="igual" value="=" onclick="igualar()">
+                    <br> 
+                </form><!--form .calculadora-->
+            </div><!--.contenedor-->
+        </div><!--.todo--> 
+        <script src="calculadora.js"></script>
+    </body>
+</html>
